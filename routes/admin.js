@@ -48,7 +48,7 @@ router.get('/users', (req, res) => {
 
       for (user in results) {
         showUsers += `<div>
-<div>${results[user]}</div>
+<div>${results[user].userName} - ${results[user].userPass} - ${results[user].userId}</div>
 `
         showUsers += `</div>`
         res.send(showUsers);
