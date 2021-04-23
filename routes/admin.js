@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
   let adminInputPass = req.body.userPass;
 
   if (adminInputName === "admin" && adminInputPass === "admin") {
-    res.send(adminInputName)
+    res.redirect('https://stinas-newsletter.herokuapp.com/admin/users')
   } else {
     res.redirect('back')
   }
