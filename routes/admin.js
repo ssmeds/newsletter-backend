@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
   let adminInputPass = req.body.userPass;
 
   if (adminInputName === "admin" && adminInputPass === "admin") {
-    res.redirect('https://stinas-newsletter.herokuapp.com/admin/users')
+    res.send(adminInputName)
   } else {
     res.redirect('back')
   }
@@ -35,10 +35,11 @@ router.get('/users', (req, res) => {
     .then(results => {
       console.log(results);
       let showUsers =
-        `<script>
-          if(!localStorage.getItem("adminloggedin")) {
-        window.location.replace("https://stinas-newsletter.herokuapp.com/admin");
-          }</script>
+        `
+        // <script>
+        //   if(!localStorage.getItem("adminloggedin")) {
+        // window.location.replace("https://stinas-newsletter.herokuapp.com/admin");
+        //   }</script>
           
         <div><h2>Alla användare</h2>`
 
