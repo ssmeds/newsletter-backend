@@ -1,0 +1,78 @@
+[
+  {
+    "userName": "admin",
+    "userPass": "admin",
+    "userId": "",
+    "newsletter": false
+  },
+  {
+    "userName": "stina",
+    "userPass": "s",
+    "userId": "",
+    "newsletter": false
+  },
+  {
+    "userName": "kylie",
+    "userPass": "U2FsdGVkX1+p4l5G0Pd28dU8fKgfGlO/f5YuzqTA5ag=",
+    "userId": "x4sha6iOZE",
+    "newsletter": false
+  },
+  {
+    "userName": "hej",
+    "userPass": "U2FsdGVkX1/4qxqg71g1zfnNpdyhoreC1fRvIBGaV1s=",
+    "userId": "Lth9suS9ng",
+    "newsletter": false
+  },
+  {
+    "userName": "igen",
+    "userPass": "U2FsdGVkX1+ZpTsc0FcfvZMSQZUN52mxLvyFFRi1gQA=",
+    "userId": "DrslCmvCQm",
+    "newsletter": false
+  },
+  {
+    "userName": "nytt",
+    "userPass": "U2FsdGVkX182h255JbS2eW5HEGQjFsT1dDUTzU8l45g=",
+    "userId": "dmBqtFJagq",
+    "newsletter": false
+  },
+  {
+    "userName": "new",
+    "userId": "ZtbauJgFb9",
+    "newsletter": false
+  },
+  {
+    "userName": "ny",
+    "userId": "clznLigVRJ",
+    "newsletter": false
+  },
+  {
+    "userName": "åke",
+    "userPass": "åke",
+    "userId": "1JsyVX2shV",
+    "newsletter": false
+  },
+  {
+    "userName": "test",
+    "userPass": "dGVzdA==",
+    "userId": "95znC6ZiSU",
+    "newsletter": false
+  },
+  {
+    "userName": "testaigen",
+    "userPass": "dGVzdGFpZ2Vu",
+    "userId": "wFJutaw7ek",
+    "newsletter": false
+  },
+  {
+    "userName": "halloj",
+    "userPass": "aGFsbG9q",
+    "userId": "5FSGpRBNTS",
+    "newsletter": false
+  },
+  {
+    "userName": "fredrik",
+    "userPass": "ZnJlZHJpaw==",
+    "userId": "XnLKpKFmik",
+    "newsletter": false
+  }
+]
