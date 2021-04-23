@@ -15,6 +15,7 @@ router.get('/', (req, res) => {
 })
 
 router.post('/', function (req, res, next) {
+  console.log(req.body);
   let adminInputName = req.body.userName;
   let adminInputPass = req.body.userPass;
 
