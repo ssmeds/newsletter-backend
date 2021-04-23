@@ -13,6 +13,35 @@
       <input type="password" name="userPass" id="password" placeholder="Lösenord">
       <button type="submit">Logga in</button></form>
   </div>
+  <script>
+    let adminNameInput = document.getElementById("userName").value;
+    let adminPassInput = document.getElementById("password").value;
+
+    let adminCheck = {
+      "userName": adminNameInput,
+      "userPass": adminPassInput
+    }
+
+    fetch('https://stinas-newsletter.herokuapp.com/admin', {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json"
+        },
+        body: JSON.stringify(adminCheck)
+      })
+      .then(res => res.json())
+      .then(user => {
+        console.log('Success:', user);
+        if (user != "Terror") {
+          let userToLS = adminNameInput;
+          console.log(userToLS);
+          localStorage.setItem('adminloggedin', adminNameInput);
+          console.log("admin sparad till LS");
+        } else {
+          console.log("Något gick fel");
+        }
+      })
+  </script>
 </body>
 
 </html>
