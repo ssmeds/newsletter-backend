@@ -42,7 +42,8 @@ router.post('/add', (req, res) => {
     "userName": req.body.userName,
     "userPass": secretPassBase64,
     "userId": randomUserId,
-    "newsletter": false
+    "newsletter": false,
+    "userEmail": req.body.userEmail
   }
   req.app.locals.db.collection("users").insertOne(newUser)
     .then(result => {
@@ -63,6 +64,7 @@ router.post('/login', (req, res) => {
 
   let userNameInput = req.body.userName;
   let userPassInput = req.body.userPass;
+  let userEmailInput = req.body.userEmail;
 
   req.app.locals.db.collection("users").find({
       "userName": userNameInput
@@ -87,7 +89,7 @@ router.post('/login', (req, res) => {
       console.log("results[0].userId", results[0].userId);
       console.log("results[0].newsletter", results[0].newsletter);
 
-      if (textPass == userPassInput) {
+      if (textPass == userPassInput && results[0].userEmail == userEmailInput) {
         console.log("Stämmer bra");
         let success = {
           userName: results[0].userName,
@@ -97,13 +99,11 @@ router.post('/login', (req, res) => {
         console.log("success", success);
         console.log("Inloggningen lyckades!!");
         return res.json(success);
+      } else {
+        console.log("Stämmer inte");
+        console.log("Inloggningen misslyckades!");
+        res.send("Terror")
       }
-
-      // else {
-      //   console.log("Stämmer inte");
-      //   console.log("Inloggningen misslyckades!");
-      //   res.send("Terror")
-      // }
 
     })
 })
@@ -117,7 +117,6 @@ router.get('/newsletter/:userName', (req, res) => {
     }).toArray()
     .then(results => {
       if (results[0].newsletter == false || results[0].newsletter == "") {
-        // results[0].newsletter = true;
         req.app.locals.db.collection("users").updateOne({
             userName: findUser
           }, {
@@ -131,7 +130,6 @@ router.get('/newsletter/:userName', (req, res) => {
           })
 
       } else {
-        // results[0].newsletter = false;
         req.app.locals.db.collection("users").updateOne({
             userName: findUser
           }, {
