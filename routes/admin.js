@@ -38,11 +38,13 @@ router.get('/users', (req, res) => {
 
   req.app.locals.db.collection("users").find().toArray()
     .then(results => {
-      let showUsers = `<script>
-  if(!localStorage.getItem("adminId")) {
-window.location.replace("/admin");
-  }</script>
-  <div><h2>Alla användare</h2>`
+      let showUsers =
+        //       `<script>
+        //   if(!localStorage.getItem("adminId")) {
+        // window.location.replace("/admin");
+        //   }</script>
+        //   <div>`
+        `<h2>Alla användare</h2>`
 
       for (user in results) {
         showUsers += `<div>
