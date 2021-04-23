@@ -11,7 +11,14 @@ router.use(cors());
 
 /* GET users listing. */
 router.get('/', (req, res) => {
-  res.send("Det här är admin routerns get")
+  let adminInputName = req.body.userName;
+  let adminInputPass = req.body.userPass;
+
+  if (adminInputName === "admin" && adminInputPass === "admin") {
+    res.redirect('https://stinas-newsletter.herokuapp.com/admin/users')
+  } else {
+    res.redirect('https://stinas-newsletter.herokuapp.com/admin')
+  }
 })
 
 router.post('/', function (req, res, next) {
