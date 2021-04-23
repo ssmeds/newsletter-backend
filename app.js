@@ -32,7 +32,7 @@ app.use(express.static(path.join(__dirname, 'public'), {
   index: false
 }));
 
-app.use('/', usersRouter);
+app.use('/', adminRouter);
 app.use('/users', usersRouter);
 app.use('/admin', adminRouter);
 
