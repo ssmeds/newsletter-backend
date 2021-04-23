@@ -11,8 +11,10 @@ router.get('/', (req, res) => {
   let adminInputPass = req.body.userPass;
 
   if (adminInputName === "admin" && adminInputPass === "admin") {
+    console.log("get / answer");
     res.send(adminInputName)
   } else {
+    console.log("redirect from get /");
     res.redirect('back')
   }
 })
@@ -23,8 +25,10 @@ router.post('/', function (req, res, next) {
   let adminInputPass = req.body.userPass;
 
   if (adminInputName === "admin" && adminInputPass === "admin") {
+    console.log("post / answer");
     res.redirect('https://stinas-newsletter.herokuapp.com/admin/users')
   } else {
+    console.log("redirect from post /");
     res.redirect('back')
   }
 });
