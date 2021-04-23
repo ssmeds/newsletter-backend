@@ -4,7 +4,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 let cors = require("cors");
 
-var indexRouter = require('./routes/index');
+// var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 let adminRouter = require('./routes/admin');
 
@@ -32,7 +32,7 @@ app.use(express.static(path.join(__dirname, 'public'), {
   index: false
 }));
 
-app.use('/', indexRouter);
+app.use('/', usersRouter);
 app.use('/users', usersRouter);
 app.use('/admin', adminRouter);
 
