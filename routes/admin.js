@@ -38,17 +38,17 @@ router.get('/users', (req, res) => {
 
   req.app.locals.db.collection("users").find().toArray()
     .then(results => {
+      console.log(results);
       let showUsers =
         //       `<script>
         //   if(!localStorage.getItem("adminId")) {
         // window.location.replace("/admin");
         //   }</script>
         //   <div>`
-        `<h2>Alla användare</h2>`
+        `<div><h2>Alla användare</h2>`
 
       for (user in results) {
-        showUsers += `<div>
-<div>${results[user].userName} - ${results[user].userPass} - ${results[user].userId}</div>
+        showUsers += `<div>${results[user].userName} - ${results[user].userPass} - ${results[user].userId} - ${results[user].newsletter}</div>
 `
         showUsers += `</div>`
         res.send(showUsers);
