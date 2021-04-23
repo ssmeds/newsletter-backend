@@ -10,25 +10,40 @@ let cors = require('cors');
 router.use(cors());
 
 /* GET users listing. */
-router.get('/', function (req, res, next) {
-  let logInAdmin = `<div>
-  <form action="/login" method="post">
-  <input type="text" name="userName" id="userName" placeholder="Användarnamn">
-  <input type="password" name="userPass" id="password" placeholder="Lösenord">
-  <button type="submit">Logga in</button></form></div>`
+router.get('/', (req, res) {
+  res.send("Det här är admin routerns get")
+})
 
-  res.send(logInAdmin);
+router.post('/', function (req, res, next) {
+  let adminInputName = req.body.userName;
+  let adminInputPass = req.body.userPass;
+
+  if (adminInputName === "admin" && adminInputPass === "admin") {
+    res.redirect('/users')
+  } else {
+    res.redirect('/')
+  }
 
 });
 
 router.get('/users', (req, res) => {
 
-  let logInAdmin = `<script>
+  req.app.locals.db.collection("users").find().toArray()
+    .then(results => {
+      let showUsers = `<script>
   if(!localStorage.getItem("adminId")) {
 window.location.replace("/admin");
   }</script>
   <div><h2>Alla användare</h2>`
-  res.send(logInAdmin);
+
+      for (user in results) {
+        showUsers += `<div>
+<div>${results[user]}</div>
+`
+        showUsers += `</div>`
+        res.send(showUsers);
+      }
+    })
 
 });
 
