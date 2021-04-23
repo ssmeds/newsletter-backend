@@ -6,7 +6,7 @@
 </head>
 
 <body>
-  <div>
+  <!-- <div>
     <h1>Inloggning för administratörer</h1>
     <form action="https://stinas-newsletter.herokuapp.com/admin" method="post">
       <input type="text" name="userName" id="userName" placeholder="Användarnamn">
@@ -32,16 +32,16 @@
       .then(res => res.json())
       .then(user => {
         console.log('Success:', user);
-        if (user != "Terror") {
-          let userToLS = adminNameInput;
-          console.log(userToLS);
-          localStorage.setItem('adminloggedin', adminNameInput);
-          console.log("admin sparad till LS");
-        } else {
-          console.log("Något gick fel");
-        }
+        // if (user != "Terror") {
+        let userToLS = adminNameInput;
+        console.log(userToLS);
+        localStorage.setItem('adminloggedin', adminNameInput);
+        console.log("admin sparad till LS");
+        // } else {
+        //   console.log("Något gick fel");
+        // }
       })
-  </script>
+  </script> -->
 </body>
 
 </html>
