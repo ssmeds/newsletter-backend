@@ -10,7 +10,7 @@ let cors = require('cors');
 router.use(cors());
 
 /* GET users listing. */
-router.get('/', (req, res) {
+router.get('/', (req, res) => {
   res.send("Det här är admin routerns get")
 })
 
