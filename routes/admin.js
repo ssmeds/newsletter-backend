@@ -48,7 +48,7 @@ router.get('/users', (req, res) => {
         `<div><h2>Alla användare</h2>`
 
       for (user in results) {
-        showUsers += `<div>${results[user].userName} - ${results[user].userPass} - ${results[user].userId} - ${results[user].newsletter}</div>`
+        showUsers += `<div>Användarnamn: ${results[user].userName} - Lösenord: ${results[user].userPass} - AnvändarId${results[user].userId} - Nyhetsbrev: ${results[user].newsletter}</div>`
       }
       showUsers += `</div>`
       res.send(showUsers);
