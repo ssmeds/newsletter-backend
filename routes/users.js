@@ -49,7 +49,7 @@ router.post('/add', (req, res) => {
     .then(result => {
       console.log(result);
 
-      res.redirect('http://127.0.0.1:5500/index.html')
+      res.redirect('https://ssmeds.github.io/newsletter-frontend/')
     })
 })
 
@@ -126,7 +126,7 @@ router.get('/newsletter/:userName', (req, res) => {
           })
           .then(results => {
             console.log("users updated with true");
-            res.redirect('http://127.0.0.1:5500/index.html')
+            res.redirect('https://ssmeds.github.io/newsletter-frontend/')
           })
 
       } else {
@@ -139,7 +139,7 @@ router.get('/newsletter/:userName', (req, res) => {
           })
           .then(results => {
             console.log("users updated with false");
-            res.redirect('http://127.0.0.1:5500/index.html')
+            res.redirect('https://ssmeds.github.io/newsletter-frontend/')
           })
       }
     })
