@@ -8,7 +8,6 @@ router.use(cors());
 /* GET users listing. */
 router.get('/', (req, res) => {
 
-
   let checkForAdmin = `<div>
   <h1>Inloggning för administratörer</h1>
   <form action="https://stinas-newsletter.herokuapp.com/admin" method="post">

@@ -43,7 +43,7 @@ router.post('/add', (req, res) => {
     "userPass": secretPassBase64,
     "userId": randomUserId,
     "newsletter": false,
-    "userEmail": req.body.userEmail
+    "userEmail": req.body.email
   }
   req.app.locals.db.collection("users").insertOne(newUser)
     .then(result => {
@@ -64,7 +64,7 @@ router.post('/login', (req, res) => {
 
   let userNameInput = req.body.userName;
   let userPassInput = req.body.userPass;
-  let userEmailInput = req.body.userEmail;
+  let userEmailInput = req.body.email;
 
   req.app.locals.db.collection("users").find({
       "userName": userNameInput
